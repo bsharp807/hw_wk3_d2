@@ -1,17 +1,29 @@
 p {
-
+  text-align: center;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 130%;
 }
 
-h2 {
+h1 {
   text-align: center;
 }
 
-body {
+h3 {
+  text-align: center;
+  color: beige;
+}
+
+.buttons {
 display: grid;
 flex-wrap: wrap;
 justify-content: center;
 align-content: center;
 font-family: Verdana, Arial, Helvetica, sans-serif;
+background-image: url(../../maxresdefault.jpg);
+background-repeat: no-repeat;
+background-position: bottom;
+background-size: contain;
+background-blend-mode: color-dodge;
 }
 
 button {

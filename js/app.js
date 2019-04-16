@@ -6,44 +6,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const scissors = document.querySelector('#scissors')
   const outcome = document.querySelector('#result')
   const computerText = document.querySelector('#computers-choice');
-  const playertText = document.querySelector('#players-choice');
+  const playerText = document.querySelector('#players-choice');
 
-
-  rock.addEventListener('click', (event) => {
-    const computerChoice = rand(options);
+  const rockThrow = (array) => {
+    const computerChoice = rand(array);
     const playerChoice = event.target.value;
-    const outcome = document.querySelector('#result')
-    document.querySelector('#computers-choice').textContent = `The computer went with ${computerChoice}.`
-    document.querySelector('#players-choice').textContent = `You have chosen ${playerChoice}.`
+    computerText.textContent = `The computer went with ${computerChoice}.`
+    playerText.textContent = `You have chosen ${playerChoice}.`
     if(computerChoice != 'rock'){
       if(computerChoice === 'scissors'){
         outcome.textContent = `YOUR WINNER!`
       } else {outcome.textContent = `YOUR LOSER! BOOO!`};
     } else {outcome.textContent = `DRAW! HOW BORING!`};
-  });
-  paper.addEventListener('click', (event) => {
+  };
+
+  const scissorThrow = (array) => {
     const computerChoice = rand(options);
     const playerChoice = event.target.value;
-    const outcome = document.querySelector('#result')
-    document.querySelector('#computers-choice').textContent = `The computer went with ${computerChoice}.`
-    document.querySelector('#players-choice').textContent = `You have chosen ${playerChoice}.`
-    if(computerChoice != 'paper'){
-      if(computerChoice === 'rock'){
-        outcome.textContent = `YOUR WINNER!`
-      } else {outcome.textContent = `YOUR LOSER! BOOO!`};
-    } else {outcome.textContent = `DRAW! HOW BORING!`};
-  });
-  scissors.addEventListener('click', (event) => {
-    const computerChoice = rand(options);
-    const playerChoice = event.target.value;
-    const outcome = document.querySelector('#result')
-    document.querySelector('#computers-choice').textContent = `The computer went with ${computerChoice}.`
-    document.querySelector('#players-choice').textContent = `You have chosen ${playerChoice}.`
+    computerText.textContent = `The computer went with ${computerChoice}.`
+    playerText.textContent = `You have chosen ${playerChoice}.`
     if(computerChoice != 'scissors'){
       if(computerChoice === 'paper'){
         outcome.textContent = `YOUR WINNER!`
       } else {outcome.textContent = `YOUR LOSER! BOOO!`};
     } else {outcome.textContent = `DRAW! HOW BORING!`};
+  };
+
+  const paperThrow = (array) => {
+    const computerChoice = rand(options);
+    const playerChoice = event.target.value;
+    computerText.textContent = `The computer went with ${computerChoice}.`
+    playerText.textContent = `You have chosen ${playerChoice}.`
+    if(computerChoice != 'paper'){
+      if(computerChoice === 'rock'){
+        outcome.textContent = `YOUR WINNER!`
+      } else {outcome.textContent = `YOUR LOSER! BOOO!`};
+    } else {outcome.textContent = `DRAW! HOW BORING!`};
+  };
+
+  rock.addEventListener('click', (event) => {
+    rockThrow(options);
+  });
+
+  paper.addEventListener('click', (event) => {
+    paperThrow(options);
+  });
+
+  scissors.addEventListener('click', (event) => {
+    scissorThrow(options);
   });
 });
 
