@@ -1,1 +1,23 @@
+p {
 
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+display: grid;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+button {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 130%;
+}
