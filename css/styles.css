@@ -1,7 +1,7 @@
 p {
   text-align: center;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 130%;
+  font-size: 100%;
 }
 
 h1 {
@@ -28,8 +28,12 @@ background-blend-mode: color-dodge;
 
 button {
   border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
+  width: auto;
+  padding: auto;
+  margin-top: 2px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2px;
   font-weight: bold;
-  font-size: 130%;
+  font-size: 100%;
 }

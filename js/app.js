@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const outcome = document.querySelector('#result')
   const computerText = document.querySelector('#computers-choice');
   const playerText = document.querySelector('#players-choice');
+  const totalWins = document.querySelector('#total');
+
+  let total = 0;
+
+  const addWinsTotal = () => {
+    total += 1;
+    totalWins.textContent = `Wins So Far: ${total}`;
+  }
 
   const rockThrow = (array) => {
     const computerChoice = rand(array);
@@ -16,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(computerChoice != 'rock'){
       if(computerChoice === 'scissors'){
         outcome.textContent = `YOUR WINNER!`
+        addWinsTotal();
       } else {outcome.textContent = `YOUR LOSER! BOOO!`};
     } else {outcome.textContent = `DRAW! HOW BORING!`};
   };
@@ -28,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(computerChoice != 'scissors'){
       if(computerChoice === 'paper'){
         outcome.textContent = `YOUR WINNER!`
+        addWinsTotal();
       } else {outcome.textContent = `YOUR LOSER! BOOO!`};
     } else {outcome.textContent = `DRAW! HOW BORING!`};
   };
@@ -40,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(computerChoice != 'paper'){
       if(computerChoice === 'rock'){
         outcome.textContent = `YOUR WINNER!`
+        addWinsTotal();
       } else {outcome.textContent = `YOUR LOSER! BOOO!`};
     } else {outcome.textContent = `DRAW! HOW BORING!`};
   };
